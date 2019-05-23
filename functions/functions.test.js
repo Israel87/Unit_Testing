@@ -36,7 +36,7 @@ test('should be less than 1600', () => {
     expect(value1 + value2).toBeLessThan(1600);
 });
 
-// should be less than 1800
+// should be less than 1600
 test('should be less than or equal to 1600', () => {
     const value1 = 800;
     const value2 = 800;
