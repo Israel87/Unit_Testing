@@ -1,6 +1,8 @@
+const axios = require('axios')
+
 const functions = {
     // adds two values a
-    add : (num1, num2) => {
+    add : (num1, num2) => { 
         return num1 + num2;
     },
     // isNull
@@ -18,6 +20,11 @@ const functions = {
         return user;
     },
     // Axios http calls 
+    fetchUser : () => {
+       return axios.get('https://jsonplaceholder.typicode.com/users/1')
+        .then(res=> res.data)
+        .catch(err => 'err' );
+    }
 };
 
 module.exports = functions;

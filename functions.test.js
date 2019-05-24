@@ -52,8 +52,36 @@ test('should not be I in team', () => {
 test('should have Admin in usernames', () => {
     const usernames = ['Auditor', 'Admin', 'User'];
     expect(usernames).toContain('Admin');
-})
+});
 
 
 // HTTP Request using axios
+test('fetch name should be Leanne Graham', () => {
+    expect.assertions(1);
+    return functions.fetchUser().then(data => {
+        expect(data.name).toEqual('Leanne Graham');
+    });
+    
+    
+});
+
+// test('testing Invalid Response Type', () => {       
+    
+//     return functions.fetchUser().then(response => {
+//             console.log("We got data: "+ response);
+//         }).catch(e => {
+//             console.log("in catch");
+//             expect(e).toBeInstanceOf(IncorrectResponseTypeError);
+
+//         });
+//         expect.assertions(1);
+//    });
+// test('should get the required name', async() => {
+//     expect.assertions(1);
+//     const data = await functions.fetchUser();
+//     console.log(data)
+//    // expect(data).toEqual('Leanne Graham');
+// });
+
+
 
