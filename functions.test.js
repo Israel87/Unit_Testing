@@ -65,23 +65,14 @@ test('fetch name should be Leanne Graham', () => {
     
 });
 
-// test('testing Invalid Response Type', () => {       
-    
-//     return functions.fetchUser().then(response => {
-//             console.log("We got data: "+ response);
-//         }).catch(e => {
-//             console.log("in catch");
-//             expect(e).toBeInstanceOf(IncorrectResponseTypeError);
+// usage of async functions for HTTP requests
+test('should return the data.name using async and await', async () => {
+    expect.assertions(1);
+    const data = await functions.fetchUser();
+    expect(data.name).toEqual('Leanne Graham');
 
-//         });
-//         expect.assertions(1);
-//    });
-// test('should get the required name', async() => {
-//     expect.assertions(1);
-//     const data = await functions.fetchUser();
-//     console.log(data)
-//    // expect(data).toEqual('Leanne Graham');
-// });
+});
+
 
 
 
